@@ -84,8 +84,6 @@
  */
 
 module.exports = {
-
-
     /**
      * `UserController.create()`
      *

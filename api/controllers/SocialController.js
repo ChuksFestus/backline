@@ -4,10 +4,10 @@ var nestedPop = require('nested-pop');
  * SocialController
  *
  * @description :: Server-side logic for managing socials
- * @help 
+ * @help
  */
 
-/** 
+/**
  * @apiDefine RequesterIdNotProvidedError
  *
  * @apiError RequesterIdNotProvided No Requester id provided.
@@ -20,7 +20,7 @@ var nestedPop = require('nested-pop');
  *     }
  */
 
-/** 
+/**
  * @apiDefine RequesteeIdNotProvidedError
  *
  * @apiError RequesteeIdNotProvided No Requestee id provided.
@@ -117,8 +117,8 @@ module.exports = {
 
 
     /**
-     * `SocialController.request()` 
-     * 
+     * `SocialController.request()`
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/request Send a friend request
      * @apiName Request
@@ -139,9 +139,9 @@ module.exports = {
      *     }
      *
      * @apiUse RequesterIdNotProvidedError
-     * 
+     *
      * @apiUse RequesteeIdNotProvidedError
-     * 
+     *
      * @apiUse UserNotFoundError
      */
     request: function(req, res) {
@@ -167,7 +167,7 @@ module.exports = {
 
     /**
      * `SocialController.cancel()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/cancel Cancel a friend request
      * @apiName Cancel
@@ -188,9 +188,9 @@ module.exports = {
      *     }
      *
      * @apiUse RequesterIdNotProvidedError
-     * 
+     *
      * @apiUse RequesteeIdNotProvidedError
-     * 
+     *
      * @apiUse UserNotFoundError
      */
     cancel: function(req, res) {
@@ -226,11 +226,11 @@ module.exports = {
 
     /**
      * `SocialController.remove()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/remove Terminate a friendship
      * @apiName Remove
-     * @apiDescription This is where a friendship is terminated or destroyed 
+     * @apiDescription This is where a friendship is terminated or destroyed
      * @apiGroup Social
      *
      * @apiParam {Number} requester ID of the requester.
@@ -247,9 +247,9 @@ module.exports = {
      *     }
      *
      * @apiUse RequesterIdNotProvidedError
-     * 
+     *
      * @apiUse RequesteeIdNotProvidedError
-     * 
+     *
      * @apiUse UserNotFoundError
      */
     remove: function(req, res) {
@@ -287,11 +287,11 @@ module.exports = {
 
     /**
      * `SocialController.accept()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/accept Accept a friend request
      * @apiName Accept
-     * @apiDescription This is where the requestee accepts a friend request from a requester 
+     * @apiDescription This is where the requestee accepts a friend request from a requester
      * @apiGroup Social
      *
      * @apiParam {Number} requester ID of the requester.
@@ -308,9 +308,9 @@ module.exports = {
      *     }
      *
      * @apiUse RequesterIdNotProvidedError
-     * 
+     *
      * @apiUse RequesteeIdNotProvidedError
-     * 
+     *
      * @apiUse UserNotFoundError
      */
     accept: function(req, res) {
@@ -346,8 +346,8 @@ module.exports = {
     },
 
     /**
-     * `SocialController.createPost()` 
-     * 
+     * `SocialController.createPost()`
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/post Create a new social post
      * @apiName CreatePost
@@ -376,7 +376,7 @@ module.exports = {
      *       "status": "error",
      *       "err": "No Creator/Owner user id provided!"
      *     }
-     * 
+     *
      * @apiError PostContentNotProvided No post content provided.
      *
      * @apiErrorExample Error-Response:
@@ -408,7 +408,7 @@ module.exports = {
 
     /**
      * `SocialController.uploadImage()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/upload Upload an image
      * @apiName UploadImage
@@ -464,7 +464,7 @@ module.exports = {
 
     /**
      * `SocialController.updatePost()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {put} /api/v1/social/post Update a post
      * @apiName UpdatePost
@@ -486,7 +486,7 @@ module.exports = {
      *     }
      *
      * @apiUse PostIdNotProvidedError
-     * 
+     *
      * @apiUse PostNotFoundError
      */
     updatePost: function(req, res) {
@@ -523,7 +523,7 @@ module.exports = {
 
     /**
      * `SocialController.deletePost()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {delete} /api/v1/social/post/:id Delete a post
      * @apiName DeletePost
@@ -543,7 +543,7 @@ module.exports = {
      *     }
      *
      * @apiUse PostIdNotProvidedError
-     * 
+     *
      * @apiUse PostNotFoundError
      */
     deletePost: function(req, res) {
@@ -579,7 +579,7 @@ module.exports = {
 
     /**
      * `SocialController.getPost()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {get} /api/v1/social/post/:id Get post(s)
      * @apiName GetPost
@@ -597,7 +597,7 @@ module.exports = {
      *       "postImage": "http://w............"
      *        .................................
      *     }
-     * 
+     *
      * @apiUse PostNotFoundError
      */
     getPost: function(req, res) {
@@ -639,7 +639,7 @@ module.exports = {
 
     /**
      * `SocialController.searchPost()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {get} /api/v1/social/post/search Search for post(s)
      * @apiName SearchPost
@@ -663,7 +663,7 @@ module.exports = {
      *     }
      *
      * @apiUse SearchTermNotProvidedError
-     * 
+     *
      */
     searchPost: function(req, res) {
         var page = 1;
@@ -693,7 +693,7 @@ module.exports = {
 
     /**
      * `SocialController.unlikePost()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/post/unlike Unlike a post
      * @apiName UnlikePost
@@ -714,7 +714,7 @@ module.exports = {
      *     }
      *
      * @apiUse PostIdNotProvidedError
-     * 
+     *
      * @apiUse PostNotFoundError
      */
     unlikePost: function(req, res) {
@@ -747,7 +747,7 @@ module.exports = {
 
     /**
      * `SocialController.likePost()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/post/like Like a post
      * @apiName LikePost
@@ -768,14 +768,14 @@ module.exports = {
      *     }
      *
      * @apiUse PostIdNotProvidedError
-     * 
+     *
      * @apiUse PostNotFoundError
      */
     likePost: function(req, res) {
-        if (!req.param('id')) {
+        if (!req.body.id) {
             return res.json(401, { status: 'error', err: 'No Post id provided!' });
         } else {
-            SocialPosts.findOne({ select: 'postText', where: { id: req.param('id') } }).populate('likes').exec(function(err, post) {
+            SocialPosts.findOne({ select: 'postText', where: { id: req.body.id } }).populate('likes').exec(function(err, post) {
                 if (err) {
                     sails.log.error(err);
                     return res.json(err.status, { err: err });
@@ -785,7 +785,7 @@ module.exports = {
                     return res.json(200, { status: 'error', message: 'No Post with such id existing' });
                 } else {
 
-                    post.likes.add(req.param('liker'));
+                    post.likes.add(req.body.liker);
                     post.save(function(err) {
                         if (err) {
                             sails.log.error(err);
@@ -801,7 +801,7 @@ module.exports = {
 
     /**
      * `SocialController.createComment()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {post} /api/v1/social/comment Create a new comment
      * @apiName CreateComment
@@ -823,7 +823,7 @@ module.exports = {
      *     }
      *
      * @apiUse PostIdNotProvidedError
-     * 
+     *
      * @apiError OwnerIdNotProvided No Owner/User id provided.
      *
      * @apiErrorExample Error-Response:
@@ -832,8 +832,8 @@ module.exports = {
      *       "status": "error",
      *       "err": "No post content provided!"
      *     }
-     * 
-     * 
+     *
+     *
      * @apiError CommentNotProvided No comment provided.
      *
      * @apiErrorExample Error-Response:
@@ -873,7 +873,7 @@ module.exports = {
 
     /**
      * `SocialController.updateComment()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {put} /api/v1/social/post Update a comment
      * @apiName UpdateComment
@@ -894,7 +894,7 @@ module.exports = {
      *     }
      *
      * @apiUse CommentIdNotProvidedError
-     * 
+     *
      * @apiUse CommentNotFoundError
      */
     updateComment: function(req, res) {
@@ -925,7 +925,7 @@ module.exports = {
 
     /**
      * `SocialController.deleteComment()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {delete} /api/v1/social/comment/:id Delete a comment
      * @apiName DeleteComment
@@ -945,7 +945,7 @@ module.exports = {
      *     }
      *
      * @apiUse CommentIdNotProvidedError
-     * 
+     *
      * @apiUse CommentNotFoundError
      */
     deleteComment: function(req, res) {
@@ -976,7 +976,7 @@ module.exports = {
 
     /**
      * `SocialController.getComment()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {get} /api/v1/social/comment/:id Get comment(s)
      * @apiName GetComment
@@ -994,9 +994,9 @@ module.exports = {
      *       ".........": "...................."
      *        .................................
      *     }
-     * 
+     *
      * @apiUse CommentNotFoundError
-     * 
+     *
      */
     getComment: function(req, res) {
         if (req.param('id')) {
@@ -1026,7 +1026,7 @@ module.exports = {
 
     /**
      * `SocialController.getFeed()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {get} /api/v1/social/feed/:id Get user's feed
      * @apiName GetFeed
@@ -1044,7 +1044,7 @@ module.exports = {
      *       ".........": "...................."
      *        .................................
      *     }
-     * 
+     *
      */
     getFeed: function(req, res) {
         var offset, limit = 0;
@@ -1078,12 +1078,14 @@ module.exports = {
                             friends.push(friend.id);
                         });
 
+                        friends.push(user.id)
                         // check if the user has any friends yet
                         if (friends.length > 0) {
                             SocialPosts.find({
-                                    id: friends
+                                    owner: friends
                                 }).populate('comments')
                                 .populate('likes')
+                                .populate('owner')
                                 .limit(limit)
                                 .skip(offset)
                                 .sort('createdAt DESC')
@@ -1092,7 +1094,6 @@ module.exports = {
                                         sails.log.error(err);
                                         return res.json(err.status, { err: err });
                                     }
-
                                     return res.json(200, posts);
                                 });
                         } else {
@@ -1106,7 +1107,7 @@ module.exports = {
 
     /**
      * `SocialController.searchComment()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {get} /api/v1/social/comment/search Search for post(s)
      * @apiName SearchComment
@@ -1159,7 +1160,7 @@ module.exports = {
 
     /**
      * `SocialController.getCount()`
-     * 
+     *
      * ----------------------------------------------------------------------------------
      * @api {get} /api/v1/socialcount Get social counts
      * @apiName GetCount
