@@ -38,7 +38,9 @@ module.exports.policies = {
 
     'UserController': { // We dont need authorization here, allowing public access
         'create': true,
-        'delete': ['isHigh', 'isAdmin']
+        'delete': ['isHigh', 'isAdmin'],
+        'update': ['isAuthenticated']
+
     },
 
     'AdminController': {
@@ -113,6 +115,10 @@ module.exports.policies = {
     'PaymentsController': {
         '*': ['isAdmin', 'isHigh', 'isAuthenticated'],
         //'*': true,
+    },
+
+    'SocialController': {
+        '*': ['isAuthenticated']
     },
 
     /***************************************************************************
